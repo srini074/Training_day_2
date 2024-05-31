@@ -36,22 +36,86 @@
       </div>
     </div>
     <script>
-      var student={
-        name:"Lohith",
-        age:20,
-        company:"Proclink",
-      };
-      console.log(student)
-      console.log(student.name)
-      console.log(student["age"]);
-      var t= null;
-      console.log(typeof t)
+      // let & const - block scope -
+      {
+        var x1=10;
+        let x2=20;
+      }
+      console.log(x1);
+      console.log(x2);
 
-      let name="Luffy";
-      console.log(name)
-      name="Zero";
-      console.log(name)
+      //var can be contained in functional scope
+
+      function fun(){
+        var t1=10;
+        let t2=20;
+        console.log(t1) // 10
+        console.log(t2) // 20
+      }
       
+      //console.log(t1)  // not defined (error)
+      //console.log(t2)  // not defined (error)
+
+      function drivingTest(){
+        let msg;
+        if(age>18){
+          msg = "eligible";
+        }else{
+          msg="not eligible";
+        }
+        console.log("🚗 are eligible")
+      }
+      drivingTest(20)
+
+      //Implicit coercion
+      var x1=3;
+      var x2="5";
+      console.log(x1 + x2);
+      console.log(x1 - x2);
+
+      //Explicit coercion
+      var x1=3;
+      var x2="5";
+      console.log(x1 + parseInt(x2));
+      console.log(x1 + + x2);
+      
+      [2,4,5] + "abc";
+      //'2,4,5abc'
+
+      [] + [];
+      // ''
+
+      null + 5;
+      // 5
+
+      4 * "5";
+      // 20
+
+      4 * "5a";
+      // NaN
+
+      NaN * NaN;
+      // NaN
+
+      NaN/4;
+      // NaN
+
+      typeof(NaN);
+      // 'number'
+
+
+      var g1 = 5;
+      var g2 = "5";
+      console.log(g1 == g2); // true slower will try to convert into same data types.
+      console.log(g1 === g2); // false faster first checks if the data types are same if not will return false.
+
+var q1 = [100,200];
+var q3 = [...q1];
+var q3 = [q1];
+
+
+    
     </script>
+    <script src="spread.js"></script>
   </body>
 </html>
