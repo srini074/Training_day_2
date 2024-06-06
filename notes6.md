@@ -58,6 +58,7 @@
 - 129  git log -1
 - 130  git log -2_
 - 131  git log --author=authot_name
+- git branch --all // This command can be used to see all branches
 
 - Pick axe command
 - git log -S<word>
@@ -112,3 +113,10 @@ press 'n' to go to next match and press  'N' to go to previous match
 - 3)Staging (Testing QA)
 
 ![Stages of git repository branches and merges to the code base](image-8.png)
+
+## Design Patterns
+
+## Ahead and Behind branches
+
+
+
