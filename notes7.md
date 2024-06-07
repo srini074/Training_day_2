@@ -41,3 +41,8 @@
 - to abort the rebase in between
 
 - rebase should not be used on master/main branches
+
+- git rebase is used to maintain the history in a straigh line ( fast forward merges). It will be easy to search using binary method in fast forward merges. Bugs can be found quickly in this way.
+## Pull request
+
+- feature to dev branch

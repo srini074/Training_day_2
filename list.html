@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    /* Inline CSS : Concise */
+    h3{
+        color: orange;
+    }
+    h1{
+        font-size: 54px;
+        font-weight: normal;
+        font-style: italic;
+        color: indianred;
+    }
+    .brand{
+        color: black;
+        text-align: center;
+        text-decoration: underline;
+        letter-spacing: 15px;
+    }
+    .content{
+        /* 1)Avoids re-reading of line
+        2)font-size inverts line-height */
+        line-height: 1.5;
+    }
+</style>
+<!-- External CSS is preferred, reusability -->
+<link rel="stylesheet" href="list.css"/>
+</head>
+<body>
+    <h1>Top 3 best restaurants</h1>
+    <br/>
+    <h3 class="brand">GUCCI</h3>
+<h3>Hobbies</h3>    
+    <ul>
+        <!-- Inline CSS : No separation of concern  -->
+        <li style="color: crimson;">Sleeping</li>
+        <li>Cooking</li>
+        <li>Anime</li>
+        <li>Table Tennis</li>
+        <li>Music</li>
+        <li>Pencil Drawing</li>
+        <li>Travelling</li>
+    </ul>
+    <br/>
+
+    <h3>Hobbies</h3>
+
+    <ol>
+        <li>Sleeping</li>
+        <li>Cooking</li>
+        <li>Anime</li>
+        <li>Table Tennis</li>
+        <li>Music</li>
+        <li>Pencil Drawing</li>
+        <li>Travelling</li>
+    </ol>
+
+    <br/>
+    <ol start="4">
+        <li>Sleeping</li>
+        <li>Cooking</li>
+        <li>Anime
+            <ol>
+                <li>One piece</li>
+                <li>Death Note</li>
+                <li>Naruto</li>
+                <li>Attack on titan</li>
+            </ol>
+        </li>
+        <li>Table Tennis</li>
+        <li>Music</li>
+        <li>Pencil Drawing</li>
+        <li>Travelling</li>
+    </ol>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quasi dolores exercitationem, iure rem assumenda omnis asperiores repudiandae quod? Illo ex nesciunt numquam alias ut. Quasi beatae perferendis nobis facere laudantium, nisi, delectus eos minima rem eveniet accusamus maxime fugiat quisquam qui id repellendus? Ex incidunt in est. Assumenda, totam?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas exercitationem numquam blanditiis harum architecto maxime sit, odit, molestias sint quae beatae perferendis corrupti perspiciatis quisquam rem doloremque voluptatibus labore? Quibusdam cupiditate odio quia reiciendis perferendis itaque totam ad at?</p>
+
+    <a href="https://docs.emmet.io/cheat-sheet/">Emmet</a>
+
+    <a href="https://vercel.com/" target="_blank">Vercel</a>
+
+
+</body>
+</html>
