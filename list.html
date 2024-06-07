@@ -20,20 +20,33 @@
         text-align: center;
         text-decoration: underline;
         letter-spacing: 15px;
+        font-family: "Roboto", sans-serif;
     }
     .content{
         /* 1)Avoids re-reading of line
         2)font-size inverts line-height */
+        font-family: "Roboto", sans-serif;
         line-height: 1.5;
+    }
+    .not-lists{
+        font-family: "Bungee Spice", sans-serif;
     }
 </style>
 <!-- External CSS is preferred, reusability -->
 <link rel="stylesheet" href="list.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Top 3 best restaurants</h1>
     <br/>
     <h3 class="brand">GUCCI</h3>
+
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolore distinctio at quaerat eveniet eius corporis obcaecati sed temporibus totam provident fuga tenetur assumenda quae reiciendis! Tempore quos corporis neque laborum id quod eveniet cumque blanditiis modi perferendis quasi hic debitis soluta doloremque, mollitia ut facilis nemo repellendus quaerat, magnam sapiente! Eligendi enim sunt amet, nesciunt est ipsam ut possimus odio placeat, quas nisi cupiditate soluta omnis impedit officiis asperiores? Nihil cupiditate fugiat, saepe ab soluta culpa illum eveniet odio! Fuga ducimus soluta reiciendis, culpa hic doloribus, praesentium tenetur animi quis numquam sequi perferendis architecto distinctio. Excepturi praesentium tempora molestias!</p>
 <h3>Hobbies</h3>    
     <ul>
         <!-- Inline CSS : No separation of concern  -->
@@ -60,7 +73,7 @@
     </ol>
 
     <br/>
-    <ol start="4">
+    <ol class="lists" start="4">
         <li>Sleeping</li>
         <li>Cooking</li>
         <li>Anime
