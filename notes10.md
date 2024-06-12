@@ -72,7 +72,7 @@
 
 ## Features
 
-- Database- Frequently asked it will have it in the ram
+- Database- Frequently asked data, it will fetch it in the ram
 - Querying becomes easier
 - CRUD - easy
 - Backups are inbuilt 
@@ -88,4 +88,4 @@
 ## Non-Relational database
 
 - MongoDB, CouchDB, Redis, Cassandra
-- Neo 4j
+- Neo 4j,Dynamo DB
