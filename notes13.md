@@ -104,3 +104,73 @@ FROM employees
 GROUP BY building;
 
 ![Screenshot-10](image-55.png)
+
+## Excersice 5 
+
+![Almost the answer](image-82.png)
+
+- SELECT * from orders as o 
+                where o purch_amt > (Select Avg (purch_amt) from orders as i
+                                        where i.customer_id = o.customer_id)
+
+![Answer explanation pictorially](image-83.png) 
+
+- This type of sub query is called as co related sub query.
+- Subquery is better in terms of readability and has advantages like usage of operators. Joins are better but not good at readability.Sub queries are easier.
+
+## Operators for sub queries
+
+- All
+- Any 
+- Exists
+
+
+create database ftrain;
+
+create table training(sno int, day varchar(45), topic varchar(40));
+
+insert into training values (01,'day 01','sql basics');
+
+select * from training
+
+insert into training values (02,'day 02','sql queries');
+
+insert into training values (03,'day 03','data base types');
+insert into training values (04,'day 04','ddl & dml commands');
+select * from training
+
+
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL,
+    department_id INT,
+    manager_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id),
+    FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
+);
+
+
+INSERT INTO departments (department_id, department_name) VALUES
+(1, 'Sales'),
+(2, 'HR'),
+(3, 'IT'),
+(4, 'Finance');
+
+INSERT INTO employees (employee_id, first_name, last_name, salary, department_id, manager_id) VALUES
+(1, 'John', 'Doe', 60000, 1, NULL),
+(2, 'Jane', 'Smith', 75000, 1, 1),
+(3, 'Emily', 'Jones', 50000, 2, NULL),
+(4, 'Michael', 'Brown', 55000, 2, 3),
+(5, 'Chris', 'Wilson', 95000, 3, NULL),
+(6, 'Sarah', 'Taylor', 40000, 3, 5),
+(7, 'David', 'Lee', 105000, 3, 5),
+(8, 'Paul', 'Walker', 120000, 4, NULL),
+(9, 'Laura', 'Hall', 110000, 4, 8);
+

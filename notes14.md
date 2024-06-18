@@ -138,6 +138,8 @@ having count(city)=1;
 - select orders.ord_no from salesman, orders where city = 'Paris' and salesman.salesman_id=orders.salesman_id;
 
 ![screen6](image-68.png)
+- Six solution below image
+![Solution](image-79.png)
 
 ## Q7
 
@@ -148,6 +150,11 @@ group by c.salesman_id,s.name
 having count(c.salesman_id) > 1;
 
 ![Screen7](image-69.png)
+
+- Solution below image
+![solution7](image-80.png)
+
+![sol7](image-81.png)
 
 ## DDL and DML
 
