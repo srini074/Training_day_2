@@ -265,6 +265,37 @@ FROM Movies;
 
 
 
+-- Stored Procedure
+
+Declare @OrderAmount Decimal(10,2) = 1500.00
+
+If @OrderAmount > 1000
+Begin 
+	Print 'Applying 10% discount'
+End
+Begin
+	Print 'No Discount'
+End
+
+Declare @Counter Int = 10
+
+While @Counter > 0
+Begin 
+	Print @Counter
+	Set @Counter = @Counter - 1
+
+End
+
+Create Procedure spGetMoviesByGenre
+	@Genre nvarchar(20)
+As
+Begin
+
+Select * from Movies
+	Where Genre = 'Action'
+End
+
+Execute spGetMoviesByGenre @Genre = 'Action'
 
 
 
