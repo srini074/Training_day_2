@@ -269,18 +269,20 @@ FROM movies m
 FOR JSON Path, Root('Movies')
 
 
+
 Declare  @movieId Int = 3
 
 Select * from Movies
 	Where MovieId = @movieId
 
-Create Function CalculateAge(@ReleaseDate Int)
+Create Function dbo.CalculateAges(@ReleaseDate Int)
 Returns Int
 As
 Begin 
 	Return Year(GetDate()) - @ReleaseDate;
 End;
 
-Select dbo.CalculateAge([Year]) from Movies
+Select dbo.CalculateAges([Ryear]) from Movies
 
-Select dbo.CalculateAge(2005);
+Select dbo.CalculateAges(2005);
+

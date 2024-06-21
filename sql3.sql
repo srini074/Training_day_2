@@ -205,3 +205,66 @@ Case
     Else 'Old'
     End as Category
 from Movies
+
+
+Task 1: Categorize Movies Based on Box Office Collections
+
+
+Task: Create a query to categorize movies into three groups based on their box office collections: 'Blockbuster', 'Hit', and 'Average'. Use the following criteria:
+
+Blockbuster: BoxOffice > 10,000,000,000
+Hit: BoxOffice between 1,000,000,000 and 10,000,000,000
+Average: BoxOffice < 1,000,000,000
+
+SELECT 
+    Title,
+    BoxOffice,
+    CASE
+        WHEN BoxOffice > 10000000000 THEN 'Blockbuster'
+        WHEN BoxOffice BETWEEN 1000000000 AND 10000000000 THEN 'Hit'
+        ELSE 'Average'
+    END AS BoxOfficeCategory
+FROM Movies;
+
+
+
+
+
+
+
+
+
+
+
+
+Task 2: Determine Actors Age Group
+Task: Create a query to determine the age group of each actor based on their birth date. The age groups are 'Young' (age < 30), 'Middle-aged' (age between 30 and 50), and 'Senior' (age > 50).
+SELECT 
+    FirstName,
+    LastName,
+    DATEDIFF(YEAR, BirthDate, GETDATE()) AS Age,
+    CASE
+        WHEN DATEDIFF(YEAR, BirthDate, GETDATE()) < 30 THEN 'Young'
+        WHEN DATEDIFF(YEAR, BirthDate, GETDATE()) BETWEEN 30 AND 50 THEN 'Middle-aged'
+        ELSE 'Senior'
+    END AS AgeGroup
+FROM Actors;
+
+Task 3: Evaluate Movie Profitability
+Task: Create a query to evaluate the profitability of each movie. Consider a movie 'Profitable' if BoxOffice > Budget and 'Not Profitable' if BoxOffice <= Budget.
+
+SELECT 
+    Title,
+    Budget,
+    BoxOffice,
+    CASE
+        WHEN BoxOffice > Budget THEN 'Profitable'
+        ELSE 'Not Profitable'
+    END AS Profitability
+FROM Movies;
+
+
+
+
+
+
