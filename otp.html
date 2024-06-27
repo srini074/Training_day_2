@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Account Registration</title>
+<style>
+    .container {
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .Register {
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-right: 0;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .otp-button {
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .otp-button:hover {
+        background-color: #00608E;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Bank Account Registration</h2>
+    <form action="#" method="post" id="registrationForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="phone">Phone Number/Email</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="otp">Enter OTP</label>
+        <br/>
+        <input type="text" id="otp" name="otp">
+
+        <input type="hidden" id="storedOTP" name="storedOTP">
+
+        <br/>
+        <button type="button" class="otp-button" onclick="sendOTP()">Send OTP</button>
+
+        <button type="button" class="Register" onclick="success()">Register</button>
+    </form>
+</div>
+
+<script>
+    let OTP = ''; 
+
+    function sendOTP() {
+        let digits = '0123456789';
+        OTP = '';
+        let len = digits.length;
+        for (let i = 0; i < 4; i++) {
+            OTP += digits[Math.floor(Math.random() * len)];
+        }
+
+        document.getElementById('storedOTP').value = OTP; 
+        console.log("OTP of 4 digits: " + OTP);
+        alert('OTP sent successfully to your registered mobile number or email.');
+    }
+
+    function success() {
+        let enteredOTP = document.getElementById('otp').value;
+        let storedOTP = document.getElementById('storedOTP').value;
+
+        if (enteredOTP === storedOTP) {
+            alert("Successfully Logged in");
+        } else {
+            alert("Incorrect OTP");
+        }
+    }
+</script>
+
+</body>
+</html>
