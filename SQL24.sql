@@ -92,3 +92,37 @@ tblEmployee
 
 Drop Index tblEmployee.PK_tblEmplo_3214EC07ED810568
 
+DECLARE @xmlDoc INT;
+DECLARE @xmlData NVARCHAR(MAX);
+ 
+-- 1. Assign XML data to a variable
+SET @xmlData = 
+'<Books>
+<Book id="1">
+<Title>SQL for Beginners</Title>
+<Author>John Doe</Author>
+<Price>29.99</Price>
+</Book>
+<Book id="2">
+<Title>Advanced SQL</Title>
+<Author>Jane Smith</Author>
+<Price>49.99</Price>
+</Book>
+</Books>';
+ 
+-- 2. Parse the XML document
+EXEC sp_xml_preparedocument @xmlDoc OUTPUT, @xmlData;
+ 
+-- 3. Query the XML data using OPENXML
+SELECT *
+FROM OPENXML(@xmlDoc, '/Books/Book', 1)
+WITH (
+    id INT '@id',
+    Title NVARCHAR(100) 'Title',
+    Author NVARCHAR(100) 'Author',
+    Price DECIMAL(10,2) 'Price'
+);
+ 
+-- Clear the memory
+EXEC sp_xml_removedocument @xmlDoc;
+
